@@ -1,0 +1,22 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "Mon projet OpenClassrooms 3 OhMyFood",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emmanuelabtx/ohmyfood.git"
+  },
+  "author": "Emmanuel Abete",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emmanuelabtx/ohmyfood/issues"
+  },
+  "homepage": "https://github.com/emmanuelabtx/ohmyfood#readme",
+  "devDependencies": {
+    "sass": "^1.48.0"
+  }
+}
