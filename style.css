@@ -64,34 +64,19 @@ header {
   opacity: 0.9;
 }
 
-.tabe {
-margin: 0;
-padding: 0;
-list-style: none;
-counter-reset: compteListe;
+.tuto {
+  counter-reset: steps;
 }
-
 .tuto ol {
   display: flex;
-  gap: -1.5rem;
-  }
+  flex-wrap: wrap;
+  gap: 2rem;
+}
 @media (max-width: 1000px) {
   .tuto ol {
     flex-direction: column;
   }
 }
-
-.tibo {
-    padding: 1.5rem;
-    margin: 1rem 0 1rem .75rem;
-    box-shadow: .25rem .25rem .5rem rgba(0,0,0,.125);
-    border-radius: 1.25rem;
-    background-color: #f6f6f6;
-    display: flex;
-    position: relative;
-}
-
-
 .tuto li {
   position: relative;
   list-style-type: none;
@@ -101,30 +86,27 @@ counter-reset: compteListe;
   border-radius: 1rem;
   box-shadow: 2px 1px 8px -3px #000000;
 }
-
-.tibo::before {
-    counter-increment: compteListe 1;
-    content: counter(compteListe) " ";
-    background: #9356dc;
-    height: 1.5rem;
-    width: 1.5rem;
-    border-radius: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    position: absolute;
-    left: -.75rem;
+.tuto li::before {
+  content: counter(steps);
+  counter-increment: steps;
+  color: white;
+  background-color: #9356dc;
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 1rem;
+  left: -1rem;
 }
-
 .tuto li:hover {
   transform: scale(1.02);
 }
-
 .tuto li i.fas {
-margin-right: 1rem;
-color: #7e7e7e;
-font-size: 1.5rem;
+  margin-right: 1rem;
+  color: #7e7e7e;
+  font-size: 1.5rem;
 }
 
 /*# sourceMappingURL=style.css.map */
