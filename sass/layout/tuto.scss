@@ -29,7 +29,7 @@
             border-radius: 50%;
             position: absolute;
             top: 50%;
-            left: -1 * variables.$tuto-bullet-height;
+            left: -1 * variables.$tuto-bullet-height; 
             transform: translateY(-50%); 
         }
         list-style-type: none;

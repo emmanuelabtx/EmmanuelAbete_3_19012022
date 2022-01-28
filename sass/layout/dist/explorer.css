@@ -20,7 +20,7 @@
   margin-top: 1rem;
   cursor: pointer;
   box-shadow: 2px 1px 8px -3px #7e7e7e;
-  background-image: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+  background-image: linear-gradient(to top, #9356dc, #ff79da);
   font-size: 1rem;
 }
 .explorer button:hover {

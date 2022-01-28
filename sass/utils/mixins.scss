@@ -2,8 +2,8 @@
 
 @mixin gradient($opacity: 0.9) {
     background-image: linear-gradient(to top, 
-    rgba(147, 86, 220, $opacity), 
-    rgba(255, 121, 218, $opacity));
+    #9356dc, 
+    #ff79da,);
 }
 
 @mixin box-shadow {
