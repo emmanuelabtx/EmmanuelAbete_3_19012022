@@ -58,7 +58,10 @@ ________________________________________________________
   
 ANIMATION : Loader
   
-J'ai copié l'élément "fas fa-circle-notch" provenant de "Font Awesome", et je l'ai collé dans "index.html".
-  
-Pour que le l'élément du loader reste à sa dernière place, j'ai utilisé la propriété "animation-fill-mode". En y appliquant la valeur "forwards", l'élément conserve la dernière position de l'animation.
+J'ai créé cette animation à l'aide d'un pseudo-élément, en pur CSS.
+
+J'ai expérimenté un "display: grid" sur la class .loader, et ça a bien fonctionné. 
+Le problème c'est que si maintenant j'applique à la place du "display: grid" un "display: flex", le loader se positionnera par erreur à gauche au lieu de se positionner au centre. 
+    
+Pour que l'élément en arrière-plan du loader reste à sa dernière place, j'ai utilisé la propriété "animation". En y appliquant la valeur "forwards", l'élément en arrière-plan conserve sa dernière position avant l'animation.
 ________________________________________________________
