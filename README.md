@@ -3,6 +3,8 @@
 MES CHOIX TECHNIQUES
 ____________________
 
+L’avantage que j'ai eu à utiliser CSS Grid plutot que Flexbox à certains moments, c'est que sur certains points, j'avais des réglages moins complexes à effectuer dans le choix des propriétés CSS. Selon certaines circonstances, CSS Grid m'a semblé avantageux soit pour la mise en page intégrale, soit pour une partie de mise en page.
+
 Dans le dossier "sass", j'ai créé le fichier "base.scss" pour y mettre tout ce qui concerne la configuration, notamment les "fonts". (Chemin de destination :  EmmanuelAbete_3_19012022/sass/base.scss)
 
 J'ai mis le bouton "Explorer nos restaurants" dans un fichier "explorer.scss" à l'intérieur du dossier "layout" que j'ai créé. (Chemin de destination :  EmmanuelAbete_3_19012022/sass/layout/explorer.scss)
