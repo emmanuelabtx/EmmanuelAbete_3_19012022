@@ -340,8 +340,7 @@ Pour que le remplissage du coeur grossisse au passage de la souris, j'ai rajout√
 
 .footer__list {
   list-style-type: none;
-  margin-left: -13%;
-}
+  }
 
 footer {
   background-color: #353535;
@@ -352,8 +351,7 @@ footer h2 {
   font-family: "Shrikhand", "sans-serif";
   font-weight: 500;
   padding: 1rem 0;
-  margin-left: -2%;
-}
+  }
 footer p {
   padding: 0.2rem;
 }
