@@ -1,3 +1,15 @@
+@charset "UTF-8";
+/* Dans ce fichier mixins.scss, j'ai entre autres choses placé les propriétés CSS correspondant au dégradé de couleur pour le bouton "Explorer nos restaurants" et pour le remplissage des coeurs au passage de la souris. */
+/* Pour insérer le coeur, tout d'abord, je suis allé dans la documentation de "Font Awesome". 
+J'ai cliqué sur "CSS Pseudo-elements". Dans cette rubrique, j'ai copié les propriétés CSS correspondant à la balise <style> et je les ai collées dans un élément ::before que j'ai créé.
+Ensuite, toujours dans la rubrique "CSS Pseudo-elements" de "Font Awesome", j'ai copié les propriétés CSS correspondant à la class .login::before, et je les ai collées. J'ai fait quelques modifications pour que ça colle avec ce qui était demandé.
+Ensuite, dans la propriété "content" que j'ai copiée, j'ai remplacé l'unicode f007 par l'unicode f004 correspondant au coeur provenant de Font Awesome.
+C'est en jouant sur le font-weight que j'ai pu créer le changement de forme du coeur au passage de la souris.
+Ensuite, j'ai créé l'élément ::after. J'y ai inclus les propriétés CSS que j'avais refactorisées dans mes mixins, notamment le dégradé de couleurs. Pour que le coeur soit rempli au passage de la souris, j'ai changé le font-weight en 900.
+Ensuite, j'ai configuré le :hover de la class .card__description de telle manière que l'élément ::after ait une opacité de 1.
+Pour que le remplissage du coeur grossisse au passage de la souris, j'ai rajouté la propriété transform avec une valeur translateY de (-50%) et un scale de 1.1. 
+*/
+/* ANIMATION - Carrés verts qui apparaissent : Dans ce fichier animations.scss, j'ai créé une règle @keyframes que j'ai nommé "quarterspin" avec les propriétés CSS que vous pouvez voir. */
 @-webkit-keyframes appear {
   0% {
     transform: translateY(50%);
@@ -130,6 +142,9 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+  /* ANIMATION : Menus qui apparaissent progressivement :
+  J'ai utilisé la pseudo-classe "nth-child".
+  Ca veut dire que le premier enfant de la class ".menus__category" a une animation-delay de 100ms, le deuxième enfant de la class ".menus__category" a une animation-delay de 200ms, le troisième enfant de la class ".menus__category" a une animation-delay de 300ms. */
 }
 @media (max-width: 1000px) {
   #page-resto .menus {
@@ -165,6 +180,11 @@ body {
           animation: appear 1s;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
+  /* J'ai utilisé la propriété "white-space" avec la valeur "nowrap"  pour forcer le texte à rester sur une seule ligne. 
+  Pour que la partie du texte située à l'extérieur ne soit pas visible lorsque je réduis le responsive, j'ai utilisé la propriété "overflow" avec la valeur "hidden".
+  Pour afficher les 3 petits points qui indiquent que le texte est rogné, j'ai utilisé la propriété "text-overflow" avec la valeur "ellipsis".
+   */
+  /* Pour que le "check" garde la même taille lorsque je réduis le responsive, j'ai appliqué la propriété "flex-shrink" avec une valeur de 0. */
 }
 #page-resto .menus .menus__category .menu-item:nth-child(1) {
   -webkit-animation-delay: 100ms;

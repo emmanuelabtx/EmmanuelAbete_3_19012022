@@ -1,3 +1,14 @@
+@charset "UTF-8";
+/* Dans ce fichier mixins.scss, j'ai entre autres choses placé les propriétés CSS correspondant au dégradé de couleur pour le bouton "Explorer nos restaurants" et pour le remplissage des coeurs au passage de la souris. */
+/* Pour insérer le coeur, tout d'abord, je suis allé dans la documentation de "Font Awesome". 
+J'ai cliqué sur "CSS Pseudo-elements". Dans cette rubrique, j'ai copié les propriétés CSS correspondant à la balise <style> et je les ai collées dans un élément ::before que j'ai créé.
+Ensuite, toujours dans la rubrique "CSS Pseudo-elements" de "Font Awesome", j'ai copié les propriétés CSS correspondant à la class .login::before, et je les ai collées. J'ai fait quelques modifications pour que ça colle avec ce qui était demandé.
+Ensuite, dans la propriété "content" que j'ai copiée, j'ai remplacé l'unicode f007 par l'unicode f004 correspondant au coeur provenant de Font Awesome.
+C'est en jouant sur le font-weight que j'ai pu créer le changement de forme du coeur au passage de la souris.
+Ensuite, j'ai créé l'élément ::after. J'y ai inclus les propriétés CSS que j'avais refactorisées dans mes mixins, notamment le dégradé de couleurs. Pour que le coeur soit rempli au passage de la souris, j'ai changé le font-weight en 900.
+Ensuite, j'ai configuré le :hover de la class .card__description de telle manière que l'élément ::after ait une opacité de 1.
+Pour que le remplissage du coeur grossisse au passage de la souris, j'ai rajouté la propriété transform avec une valeur translateY de (-50%) et un scale de 1.1. 
+*/
 .explorer {
   text-align: center;
   margin: 2rem;
@@ -28,6 +39,12 @@
   opacity: 0.9;
 }
 
+/* ANIMATION - Loader :
+J'ai créé cette animation à l'aide d'un pseudo-élément, en pur CSS.
+J'ai expérimenté un "display: grid" sur la class .loader, et ça a bien fonctionné. 
+Le problème c'est que si maintenant j'applique à la place du "display: grid" un "display: flex", le loader se positionnera par erreur à gauche au lieu de se positionner au centre. 
+
+Pour que l'élément en arrière-plan du loader reste à sa dernière place, j'ai utilisé la propriété "animation". En y appliquant la valeur "forwards", l'élément en arrière-plan conserve sa dernière position avant l'animation. */
 .loader {
   position: fixed;
   display: grid;

@@ -41,6 +41,10 @@
 
                 
             }
+
+           /* Pour éviter une répétition concernant les attributs des card__image, j'ai utilisé une boucle @for.
+           Pour que l'image i soit évaluée, j'ai dû indiquer la valeur de la variable avec un # suivi des accolades autour de $i. */
+
             @for $i from 1 through 4 {
                 &__image-#{$i} {
                     background-image: url(./assets/menu-#{$i}.jpg);

@@ -15,17 +15,35 @@ sizes="16x16" href="./assets/favicon/favicon-16x16.png">
     <link rel="stylesheet" href="style.css">
 </head>
 
+
+
+<!-- ANIMATION : Loader
+    J'ai créé cette animation à l'aide d'un pseudo-élément, en pur CSS. -->
+
 <body id="homepage">
     <div class="loader"></div>
+
+
+
+    <!-- En-tête -->
+
     <header>
         <h1>ohmyfood</h1>
     </header> 
+
+
+
+    <!-- Localisation -->
 
     <div class="city">
         <i class="fas fa-map-marker-alt"></i>
         <h2>Paris, Belleville</h2>
     </div>
         
+
+
+    <!-- Présentation -->
+
     <main>
         <section class="explorer">
             <h2>Réservez le menu qui <br>vous convient</h2>
@@ -38,6 +56,10 @@ sizes="16x16" href="./assets/favicon/favicon-16x16.png">
 
         </section>
 
+
+
+        <!-- Filtres -->
+
         <section class="tuto">
             <h2>Fonctionnement</h2>
             <ol class="tabe">
@@ -46,6 +68,10 @@ sizes="16x16" href="./assets/favicon/favicon-16x16.png">
                 <li class="tibo"><i class="fas fa-store"></i>Dégustez au restaurant</li>
             </ol>
         </section>
+
+
+
+        <!-- Section RESTAURANTS -->
 
         <section class="menus">
             <h2>Restaurants</h2>
@@ -83,20 +109,29 @@ sizes="16x16" href="./assets/favicon/favicon-16x16.png">
     
     </main>
 
+
+
+    <!-- FOOTER -->
+
     <footer>
         <h2>ohmyfood</h2>
-        <p>
-            <i class="fas fa-utensils"></i>
-            Proposer un restaurant
-        </p>
-        <p>
-            <i class="fas fa-hands-helping"></i>
-            Devenir partenaire
-        </p>
-        <p>Mentions légales</p>
-        <p>
-            <a href="mailto:emmanuelabte@live.fr">Contact</a>
-        </p>
+        <ul class="footer__list"> 
+            <li class="footer__listElt"> 
+                <a class="footer__link" href="#">
+                    <i class="fa-utensils fas footer__icon" aria-hidden="true">
+
+                    </i>Proposer un restaurant</a> 
+                </li> <li class="footer__listElt"> 
+                    <a class="footer__link" href="#">
+                        <i class="fa-hands-helping fas footer__icon" aria-hidden="true">
+
+                        </i>Devenir partenaire</a> 
+                    </li> <li class="footer__listElt"> 
+                        <a class="footer__link" href="#">Mentions légales</a> 
+                    </li> <li class="footer__listElt"> 
+                        <a class="footer__link" href="mailto:contact@ohmyfood.com">Contact</a> 
+                    </li> 
+                </ul>
     </footer>
 
 </body>

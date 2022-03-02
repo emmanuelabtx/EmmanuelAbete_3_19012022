@@ -1,3 +1,5 @@
+@charset "UTF-8";
+/* ANIMATION - Carrés verts qui apparaissent : Dans ce fichier animations.scss, j'ai créé une règle @keyframes que j'ai nommé "quarterspin" avec les propriétés CSS que vous pouvez voir. */
 @keyframes appear {
   0% {
     transform: translateY(50%);

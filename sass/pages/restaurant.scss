@@ -77,11 +77,14 @@ body {
                 background-color: colors.$color-tertiary;
             }
         }
+
+        /* ANIMATION : Menus qui apparaissent progressivement :
+        J'ai utilisé la pseudo-classe "nth-child".
+        Ca veut dire que le premier enfant de la class ".menus__category" a une animation-delay de 100ms, le deuxième enfant de la class ".menus__category" a une animation-delay de 200ms, le troisième enfant de la class ".menus__category" a une animation-delay de 300ms. */
+
         .menus__category {
             overflow: hidden;
-
-            
-            
+      
             .menu-item {
                 $numberOfItems: 3;
                 @for $i from 1 through $numberOfItems {
@@ -105,6 +108,12 @@ body {
                     display: flex;
                     align-items: flex-end;
                 }
+
+                /* J'ai utilisé la propriété "white-space" avec la valeur "nowrap"  pour forcer le texte à rester sur une seule ligne. 
+                Pour que la partie du texte située à l'extérieur ne soit pas visible lorsque je réduis le responsive, j'ai utilisé la propriété "overflow" avec la valeur "hidden".
+                Pour afficher les 3 petits points qui indiquent que le texte est rogné, j'ai utilisé la propriété "text-overflow" avec la valeur "ellipsis".
+                 */
+
                 .menu-item__description {
                     padding: 1rem;
                     overflow: hidden;
@@ -115,6 +124,9 @@ body {
                         text-overflow: ellipsis;
                     }
                 }
+
+                /* Pour que le "check" garde la même taille lorsque je réduis le responsive, j'ai appliqué la propriété "flex-shrink" avec une valeur de 0. */
+
                 .menu-item__check {
                     display: grid;
                     place-items: center;
