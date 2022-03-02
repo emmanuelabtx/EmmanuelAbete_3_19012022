@@ -60,5 +60,5 @@ ANIMATION : Loader
   
 J'ai copié l'élément "fas fa-circle-notch" provenant de "Font Awesome", et je l'ai collé dans "index.html".
   
-Pour que le l'élément du loader reste à sa dernière place, j'ai utilisé la propriété "animation-fill-mode". En y appliquant la valeur "forwards", l'élément conserve la dernière position de l'animation.
+Pour que le l'élément du loader reste à sa dernière place, j'ai utilisé la propriété "animation". En y appliquant la valeur "forwards", l'élément conserve la dernière position de l'animation.
 ________________________________________________________
