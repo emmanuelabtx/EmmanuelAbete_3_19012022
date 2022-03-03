@@ -37,8 +37,7 @@ h5,
 h6, p {
   padding: 0;
   margin: 0;
-  margin-left: 6%;
-}
+  }
 
 a {
   text-decoration: none;
@@ -62,7 +61,8 @@ header {
   background-color: #f3f3f3;
   text-align: center;
   padding: 0.5rem;
-}
+  }
+
 .city i {
   font-size: 1.5rem;
 }
@@ -166,6 +166,7 @@ Pour que l'élément en arrière-plan du loader reste à sa dernière place, j'a
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+  padding-left: 7%;
 }
 @media (max-width: 1000px) {
   .tuto ol {
@@ -210,6 +211,14 @@ Pour que l'élément en arrière-plan du loader reste à sa dernière place, j'a
   color: #7e7e7e;
   font-size: 1.5rem;
 }
+
+.filter {
+  padding-left: 5%;
+}
+
+.restau {
+  padding-left: 2%;
+  }
 
 #homepage .menus {
   background-color: #f6f6f6;
@@ -340,6 +349,8 @@ Pour que le remplissage du coeur grossisse au passage de la souris, j'ai rajout�
 
 .footer__list {
   list-style-type: none;
+  padding: 0;
+  margin: 0;
   }
 
 footer {
