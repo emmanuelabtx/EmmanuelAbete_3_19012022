@@ -63,7 +63,7 @@ header {
   font-size: 1rem;
 }
 
-/* Dans ce fichier mixins.scss, j'ai entre autres choses placé les propriétés CSS 
+/* Dans le fichier mixins.scss, j'ai entre autres choses placé les propriétés CSS 
 correspondant au dégradé de couleur pour le bouton "Explorer nos restaurants" 
 et pour le remplissage des coeurs au passage de la souris. */
 /* Pour insérer le coeur, tout d'abord, je suis allé dans la documentation de "Font Awesome". 
@@ -236,9 +236,7 @@ En y appliquant la valeur "forwards", l'élément en arrière-plan conserve sa d
   top: 1rem;
 }
 
-  /* Pour éviter une répétition concernant les attributs des card__image, j'ai utilisé une boucle @for.
-  Pour que l'image i soit évaluée, j'ai dû indiquer la valeur de la variable avec un # suivi des accolades autour de $i. */
-
+  
 #homepage .menus .card__image {
   height: 15rem;
   border-radius: 1rem 1rem 0 0;
