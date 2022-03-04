@@ -42,9 +42,11 @@ Pour que le remplissage du coeur grossisse au passage de la souris, j'ai rajout�
 /* ANIMATION - Loader :
 J'ai créé cette animation à l'aide d'un pseudo-élément, en pur CSS.
 J'ai expérimenté un "display: grid" sur la class .loader, et ça a bien fonctionné. 
-Le problème c'est que si maintenant j'applique à la place du "display: grid" un "display: flex", le loader se positionnera par erreur à gauche au lieu de se positionner au centre. 
+Le problème c'est que si maintenant j'appliquais à la place du "display: grid" un "display: flex", 
+le loader se positionnerait par erreur à gauche au lieu de se positionner au centre. 
 
-Pour que l'élément en arrière-plan du loader reste à sa dernière place, j'ai utilisé la propriété "animation". En y appliquant la valeur "forwards", l'élément en arrière-plan conserve sa dernière position avant l'animation. */
+Pour que l'élément en arrière-plan du loader reste à sa dernière place, j'ai utilisé la propriété "animation". 
+En y appliquant la valeur "forwards", l'élément en arrière-plan conserve sa dernière position avant l'animation. */
 .loader {
   position: fixed;
   display: grid;

@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 /* J'ai créé le fichier "base.scss" pour y mettre tout ce qui concerne la configuration, notamment les "fonts". */
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Shrikhand&display=swap");
@@ -9,16 +8,10 @@
   box-sizing: border-box;
 }
 
-
-
-/* Police d'écriture */
-
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
 }
-
-
 
 main {
   padding: 0 7rem;
@@ -37,7 +30,8 @@ h5,
 h6, p {
   padding: 0;
   margin: 0;
-  }
+  margin-left: 6%;
+}
 
 a {
   text-decoration: none;
@@ -61,8 +55,7 @@ header {
   background-color: #f3f3f3;
   text-align: center;
   padding: 0.5rem;
-  }
-
+}
 .city i {
   font-size: 1.5rem;
 }
@@ -70,10 +63,24 @@ header {
   font-size: 1rem;
 }
 
-
-
-/* Bouton "Explorer nos restaurants" */
-
+/* Dans ce fichier mixins.scss, j'ai entre autres choses placé les propriétés CSS 
+correspondant au dégradé de couleur pour le bouton "Explorer nos restaurants" 
+et pour le remplissage des coeurs au passage de la souris. */
+/* Pour insérer le coeur, tout d'abord, je suis allé dans la documentation de "Font Awesome". 
+J'ai cliqué sur "CSS Pseudo-elements". Dans cette rubrique, j'ai copié les propriétés CSS 
+correspondant à la balise <style> et je les ai collées dans un élément ::before que j'ai créé.
+Ensuite, toujours dans la rubrique "CSS Pseudo-elements" de "Font Awesome", 
+j'ai copié les propriétés CSS correspondant à la class .login::before, et je les ai collées. 
+J'ai fait quelques modifications pour que ça colle avec ce qui était demandé.
+Ensuite, dans la propriété "content" que j'ai copiée, j'ai remplacé l'unicode f007 par l'unicode f004 
+correspondant au coeur provenant de Font Awesome.
+C'est en jouant sur le font-weight que j'ai pu créer le changement de forme du coeur au passage de la souris.
+Ensuite, j'ai créé l'élément ::after. J'y ai inclus les propriétés CSS que j'avais refactorisées dans mes mixins, 
+notamment le dégradé de couleurs. Pour que le coeur soit rempli au passage de la souris, j'ai changé le font-weight en 900.
+Ensuite, j'ai configuré le :hover de la class .card__description de telle manière que l'élément ::after ait une opacité de 1.
+Pour que le remplissage du coeur grossisse au passage de la souris, 
+j'ai rajouté la propriété transform avec une valeur translateY de (-50%) et un scale de 1.1. 
+*/
 .explorer {
   text-align: center;
   margin: 2rem;
@@ -99,20 +106,19 @@ header {
   background-image: linear-gradient(to top, #9356dc, #ff79da);
   font-size: 1rem;
 }
-
-/* Niveau d'agrandissement du bouton "Explorer nos restaurants" au passage de la souris. */
 .explorer button:hover {
   transform: scale(1.02);
   opacity: 0.9;
 }
 
-
-
 /* ANIMATION - Loader :
 J'ai créé cette animation à l'aide d'un pseudo-élément, en pur CSS.
 J'ai expérimenté un "display: grid" sur la class .loader, et ça a bien fonctionné. 
-Le problème c'est que si maintenant j'applique à la place du "display: grid" un "display: flex", le loader se positionnera par erreur à gauche au lieu de se positionner au centre. 
-Pour que l'élément en arrière-plan du loader reste à sa dernière place, j'ai utilisé la propriété "animation". En y appliquant la valeur "forwards", l'élément en arrière-plan conserve sa dernière position avant l'animation. */
+Le problème c'est que si maintenant j'appliquais à la place du "display: grid" un "display: flex", 
+le loader se positionnerait par erreur à gauche au lieu de se positionner au centre. 
+
+Pour que l'élément en arrière-plan du loader reste à sa dernière place, j'ai utilisé la propriété "animation". 
+En y appliquant la valeur "forwards", l'élément en arrière-plan conserve sa dernière position avant l'animation. */
 .loader {
   position: fixed;
   display: grid;
@@ -122,8 +128,6 @@ Pour que l'élément en arrière-plan du loader reste à sa dernière place, j'a
   inset: 0;
   z-index: 1;
   opacity: 0.9;
-
-  /* Nombre de secondes avant que mon loader disparaisse */
   animation: disappear 200ms 3s forwards;
   transform-origin: top;
 }
@@ -135,8 +139,6 @@ Pour que l'élément en arrière-plan du loader reste à sa dernière place, j'a
   border-top: 5px solid #9356dc;
   border-radius: 50%;
   animation: spin 1s ease-in-out;
-
-  /* Nombre de tours que doit effectuer mon loader */
   animation-iteration-count: 3;
 }
 
@@ -145,18 +147,11 @@ Pour que l'élément en arrière-plan du loader reste à sa dernière place, j'a
     transform: scale(0);
   }
 }
-
-/* Rotation de mon loader */
 @keyframes spin {
   to {
     transform: rotate(360deg);
   }
 }
-
-
-
-/* Section FONCTIONNEMENT */
-
 .tuto {
   counter-reset: steps;
   margin-bottom: 2rem;
@@ -166,7 +161,6 @@ Pour que l'élément en arrière-plan du loader reste à sa dernière place, j'a
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  padding-left: 7%;
 }
 @media (max-width: 1000px) {
   .tuto ol {
@@ -212,26 +206,10 @@ Pour que l'élément en arrière-plan du loader reste à sa dernière place, j'a
   font-size: 1.5rem;
 }
 
-.filter {
-  padding-left: 5%;
-}
-
-.restau {
-  padding-left: 0%;
-  margin-bottom: 20px;
-  margin-top: 85px;
-  }
-
 #homepage .menus {
   background-color: #f6f6f6;
   margin-bottom: 2rem;
 }
-
-
-
-/* L'avantage que j'ai eu à appliquer un "display: grid" a été la possibilité d'appliquer des motifs de répétition de colonnes.
-  La notation "repeat()" que j'ai attribuée à la propriété grid-template-columns m'a permis d'exploiter cet avantage. */
-
 #homepage .menus .menus__cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -245,11 +223,6 @@ Pour que l'élément en arrière-plan du loader reste à sa dernière place, j'a
 #homepage .menus .menus__cards .new {
   position: relative;
 }
-
-
-
-/* L’avantage que j'ai eu à utiliser CSS Grid plutot que Flexbox à certains moments, c'est que sur certains points, j'avais des réglages moins complexes à effectuer dans le choix des propriétés CSS. Selon certaines circonstances, CSS Grid m'a semblé avantageux soit pour la mise en page intégrale, soit pour une partie de mise en page. */
-
 #homepage .menus .menus__cards .new::before {
   content: "Nouveau";
   position: absolute;
@@ -262,6 +235,9 @@ Pour que l'élément en arrière-plan du loader reste à sa dernière place, j'a
   right: 1rem;
   top: 1rem;
 }
+
+  /* Pour éviter une répétition concernant les attributs des card__image, j'ai utilisé une boucle @for.
+  Pour que l'image i soit évaluée, j'ai dû indiquer la valeur de la variable avec un # suivi des accolades autour de $i. */
 
 #homepage .menus .card__image {
   height: 15rem;
@@ -286,19 +262,6 @@ Pour que l'élément en arrière-plan du loader reste à sa dernière place, j'a
   background-color: white;
   border-radius: 0 0 1rem 1rem;
 }
-
-
-
-/* Pour insérer le coeur, tout d'abord, je suis allé dans la documentation de "Font Awesome". 
-J'ai cliqué sur "CSS Pseudo-elements". Dans cette rubrique, j'ai copié les propriétés CSS correspondant à la balise <style> et je les ai collées dans un élément ::before que j'ai créé.
-Ensuite, toujours dans la rubrique "CSS Pseudo-elements" de "Font Awesome", j'ai copié les propriétés CSS correspondant à la class .login::before, et je les ai collées. J'ai fait quelques modifications pour que ça colle avec ce qui était demandé.
-Ensuite, dans la propriété "content" que j'ai copiée, j'ai remplacé l'unicode f007 par l'unicode f004 correspondant au coeur provenant de Font Awesome.
-C'est en jouant sur le font-weight que j'ai pu créer le changement de forme du coeur au passage de la souris.
-Ensuite, j'ai créé l'élément ::after. J'y ai inclus les propriétés CSS que j'avais refactorisées dans mes mixins, notamment le dégradé de couleurs. Pour que le coeur soit rempli au passage de la souris, j'ai changé le font-weight en 900.
-Ensuite, j'ai configuré le :hover de la class .card__description de telle manière que l'élément ::after ait une opacité de 1.
-Pour que le remplissage du coeur grossisse au passage de la souris, j'ai rajouté la propriété transform avec une valeur translateY de (-50%) et un scale de 1.1. 
-*/
-
 #homepage .menus .card__description::before {
   display: inline-block;
   position: absolute;
@@ -349,12 +312,6 @@ Pour que le remplissage du coeur grossisse au passage de la souris, j'ai rajout�
   padding: 0.3rem;
 }
 
-.footer__list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  }
-
 footer {
   background-color: #353535;
   padding: 1rem 2rem;
@@ -364,12 +321,13 @@ footer h2 {
   font-family: "Shrikhand", "sans-serif";
   font-weight: 500;
   padding: 1rem 0;
-  }
+}
 footer p {
   padding: 0.2rem;
 }
 
-/* ANIMATION - Carrés verts qui apparaissent : j'ai créé une règle @keyframes que j'ai nommée "quarterspin" avec les propriétés CSS que vous pouvez voir. */
+/* ANIMATION - Carrés verts qui apparaissent : Dans ce fichier animations.scss, j'ai créé une règle @keyframes 
+que j'ai nommée "quarterspin" avec les propriétés CSS que vous pouvez voir. */
 @keyframes appear {
   0% {
     transform: translateY(50%);
@@ -380,10 +338,6 @@ footer p {
     opacity: 1;
   }
 }
-
-
-
-/* Pour la rotation du "check" à l'apparition du carré vert au passage de la souris */
 @keyframes quarterspin {
   0% {
     transform: rotate(-270deg);
@@ -434,19 +388,6 @@ body {
   border-radius: 2rem 2rem 0 0;
   background-color: #f6f6f6;
 }
-
-
-
-/* Pour insérer le coeur, tout d'abord, je suis allé dans la documentation de "Font Awesome". 
-J'ai cliqué sur "CSS Pseudo-elements". Dans cette rubrique, j'ai copié les propriétés CSS correspondant à la balise <style> et je les ai collées dans un élément ::before que j'ai créé.
-Ensuite, toujours dans la rubrique "CSS Pseudo-elements" de "Font Awesome", j'ai copié les propriétés CSS correspondant à la class .login::before, et je les ai collées. J'ai fait quelques modifications pour que ça colle avec ce qui était demandé.
-Ensuite, dans la propriété "content" que j'ai copiée, j'ai remplacé l'unicode f007 par l'unicode f004 correspondant au coeur provenant de Font Awesome.
-C'est en jouant sur le font-weight que j'ai pu créer le changement de forme du coeur au passage de la souris.
-Ensuite, j'ai créé l'élément ::after. J'y ai inclus les propriétés CSS que j'avais refactorisées dans mes mixins, notamment le dégradé de couleurs. Pour que le coeur soit rempli au passage de la souris, j'ai changé le font-weight en 900.
-Ensuite, j'ai configuré le :hover de la class .card__description de telle manière que l'élément ::after ait une opacité de 1.
-Pour que le remplissage du coeur grossisse au passage de la souris, j'ai rajouté la propriété transform avec une valeur translateY de (-50%) et un scale de 1.1. 
-*/
-
 #page-resto .resto__title h2::before {
   display: inline-block;
   position: absolute;
@@ -499,7 +440,7 @@ Pour que le remplissage du coeur grossisse au passage de la souris, j'ai rajout�
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
- 
+  
 }
 @media (max-width: 1000px) {
   #page-resto .menus {
@@ -533,13 +474,15 @@ Pour que le remplissage du coeur grossisse au passage de la souris, j'ai rajout�
   box-shadow: 2px 1px 8px -3px #7e7e7e;
   animation: appear 1s;
   animation-fill-mode: both;
-}
+  }
 
 
 
- /* ANIMATION - Menus qui apparaissent progressivement :
+  /* ANIMATION : Menus qui apparaissent progressivement :
   J'ai utilisé la pseudo-classe "nth-child".
-  Ca veut dire que le premier enfant de la class ".menus__category" a une animation-delay de 100ms, le deuxième enfant de la class ".menus__category" a une animation-delay de 200ms, le troisième enfant de la class ".menus__category" a une animation-delay de 300ms. */
+  Dans ce cas précis, ça veut dire que le premier enfant de la class ".menus__category" a une animation-delay de 100ms, 
+  le deuxième enfant de la class ".menus__category" a une animation-delay de 200ms, 
+  le troisième enfant de la class ".menus__category" a une animation-delay de 300ms. */
 
 #page-resto .menus .menus__category .menu-item:nth-child(1) {
   animation-delay: 100ms;
@@ -564,22 +507,21 @@ Pour que le remplissage du coeur grossisse au passage de la souris, j'ai rajout�
 
 
 
-  /* J'ai utilisé la propriété "white-space" avec la valeur "nowrap"  pour forcer le texte à rester sur une seule ligne. 
-  Pour que la partie du texte située à l'extérieur ne soit pas visible lorsque je réduis le responsive, j'ai utilisé la propriété "overflow" avec la valeur "hidden".
-  Pour afficher les 3 petits points qui indiquent que le texte est rogné, j'ai utilisé la propriété "text-overflow" avec la valeur "ellipsis".
+/* J'ai utilisé la propriété "white-space" avec la valeur "nowrap"  pour forcer le texte à rester sur une seule ligne. 
+  Pour que la partie du texte située à l'extérieur ne soit pas visible lorsque je réduis le responsive, 
+  j'ai utilisé la propriété "overflow" avec la valeur "hidden".
+  Pour afficher les 3 petits points qui indiquent que le texte est rogné, 
+  j'ai utilisé la propriété "text-overflow" avec la valeur "ellipsis".
    */
-  
+  /* Pour que le "check" garde la même taille lorsque je réduis le responsive, 
+  j'ai appliqué la propriété "flex-shrink" avec une valeur de 0. */
+
 #page-resto .menus .menus__category .menu-item .menu-item__description h4,
 #page-resto .menus .menus__category .menu-item .menu-item__description p {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-
-
-
-/* Pour que le "check" garde la même taille lorsque je réduis le responsive, j'ai appliqué la propriété "flex-shrink" avec une valeur de 0. */
-
 #page-resto .menus .menus__category .menu-item .menu-item__check {
   display: grid;
   place-items: center;
@@ -608,10 +550,6 @@ Pour que le remplissage du coeur grossisse au passage de la souris, j'ai rajout�
 #page-resto .menus .menus__category .menu-item:hover i {
   animation: quarterspin 0.5s ease-in-out;
 }
-
-
-
-/* Pour la rotation du "check" à l'apparition du carré vert au passage de la souris */
 @keyframes quarterspin {
   0% {
     transform: rotate(-270deg);
@@ -620,30 +558,6 @@ Pour que le remplissage du coeur grossisse au passage de la souris, j'ai rajout�
     transform: rotate(0);
   }
 }
-
-
-.wrapBtn {
-  display: flex;
-  text-decoration: none;
-  justify-content: center;
-  padding: 3rem 0;
-}
-
-.commandBtn {
-  border: 0;
-  padding: 0.75rem 1.5rem;
-  font-weight: 500;
-  font-size: 1.1rem;
-  border-radius: 100px;
-  color: #fff;
-  background-color: #686868;
-  background-image: linear-gradient(0deg, #9356dc, #ff79da);
-  transition-duration: .25s;
-  box-shadow: 0.25rem 0.25rem 10px rgb(0 0 0 / 25%);
-  cursor: pointer;
-}
-
-
 #page-resto section.order {
   height: 30vh;
   display: grid;
