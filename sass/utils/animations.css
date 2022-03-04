@@ -2,21 +2,26 @@
 /* ANIMATION - Carrés verts qui apparaissent : Dans ce fichier animations.scss, j'ai créé une règle @keyframes que j'ai nommé "quarterspin" avec les propriétés CSS que vous pouvez voir. */
 @-webkit-keyframes appear {
   0% {
-    transform: translateY(50%);
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
     opacity: 0;
   }
   100% {
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
     opacity: 1;
   }
 }
 @keyframes appear {
   0% {
-    transform: translateY(50%);
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
     opacity: 0;
   }
   100% {
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
     opacity: 1;
   }
-}/*# sourceMappingURL=animations.css.map */
+}
+/*# sourceMappingURL=animations.css.map */

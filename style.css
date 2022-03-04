@@ -217,7 +217,9 @@ Pour que l'élément en arrière-plan du loader reste à sa dernière place, j'a
 }
 
 .restau {
-  padding-left: 2%;
+  padding-left: 0%;
+  margin-bottom: 20px;
+  margin-top: 85px;
   }
 
 #homepage .menus {

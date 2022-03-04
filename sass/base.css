@@ -5,7 +5,8 @@
 *,
 ::before,
 ::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -16,6 +17,7 @@ body {
 main {
   padding: 0 7rem;
 }
+
 @media (max-width: 1000px) {
   main {
     padding: 0 1rem;
@@ -36,4 +38,5 @@ h6, p {
 a {
   text-decoration: none;
   color: inherit;
-}/*# sourceMappingURL=base.css.map */
+}
+/*# sourceMappingURL=base.css.map */
