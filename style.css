@@ -30,7 +30,8 @@ h5,
 h6, p {
   padding: 0;
   margin: 0;
-  margin-left: 6%;
+  margin-left: 0%;
+  display: block;
 }
 
 a {
@@ -45,6 +46,17 @@ header {
   padding: 0.3rem;
   margin: 0;
   position: relative;
+}
+
+.filter {
+  padding-left: 43px;
+  display: block;
+}
+
+.restau {
+  margin-top: 80px;
+  margin-bottom: 20px;
+  margin-left: 5px;
 }
 
 .city {
@@ -155,12 +167,14 @@ En y appliquant la valeur "forwards", l'élément en arrière-plan conserve sa d
 .tuto {
   counter-reset: steps;
   margin-bottom: 2rem;
-  margin-left: -6%;
+  padding-left: 0px;
+  margin-left: -38px;
 }
 .tuto ol {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+  padding-left: 60px;
 }
 @media (max-width: 1000px) {
   .tuto ol {
@@ -310,10 +324,22 @@ En y appliquant la valeur "forwards", l'élément en arrière-plan conserve sa d
   padding: 0.3rem;
 }
 
+.footer__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  }
+
+.footer__logo {
+  font-size: 1.2rem;
+  margin: 0 0 1rem;
+}
+
 footer {
   background-color: #353535;
   padding: 1rem 2rem;
   color: white;
+  display: block;
 }
 footer h2 {
   font-family: "Shrikhand", "sans-serif";
