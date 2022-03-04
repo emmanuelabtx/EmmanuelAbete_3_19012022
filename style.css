@@ -324,6 +324,27 @@ En y appliquant la valeur "forwards", l'élément en arrière-plan conserve sa d
   padding: 0.3rem;
 }
 
+.wrapBtn {
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  padding: 3rem 0;
+}
+
+.commandBtn {
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  border-radius: 100px;
+  color: #fff;
+  background-color: #686868;
+  background-image: linear-gradient(0deg,rgba(147,86,220,.9),rgba(255,121,218,.9));
+  transition-duration: .25s;
+  box-shadow: 0.25rem 0.25rem 10px rgb(0 0 0 / 25%);
+  cursor: pointer;
+}
+
 .footer__list {
   list-style: none;
   padding: 0;
